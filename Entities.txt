@@ -4,7 +4,7 @@ Entities:
     - id
     - name
 
-- Product
+- ProductType
     - id
     - Category - MTM
     - Stock - OTO
@@ -13,10 +13,16 @@ Entities:
     - description
     - price
     - unit
+    - brand
+
+- ProductItem
+    - id
+    - ProductType MTO
+    - last
 
 - Stock
     - id
-    - Product MTM
+    - ProductType OTO
     - min
     - max
 
@@ -39,4 +45,4 @@ Entities:
     - id
     - postal code
     - street
-    - Product MTM
+    - ProductType MTM
