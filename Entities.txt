@@ -1,0 +1,42 @@
+Entities:
+
+- Category
+    - id
+    - name
+
+- Product
+    - id
+    - Category - MTM
+    - Stock - OTO
+    - QRCode (id, default out)
+    - name
+    - description
+    - price
+    - unit
+
+- Stock
+    - id
+    - Product MTM
+    - min
+    - max
+
+- User
+    - id
+    - Permission - MTO
+    - name
+    - phone
+    - email
+
+- Permission
+    - name (id)
+    - Role MTM
+
+- Role
+    - name (id)
+    - description
+
+- Shop
+    - id
+    - postal code
+    - street
+    - Product MTM
