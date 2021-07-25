@@ -1,17 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from 'styled-components'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
+import Base from 'templates/Base'
 
 import theme from './styles/theme'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
 
+const history = createBrowserHistory()
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <Router history={history}>
+            <Base />
+          </Router>
+        </ThemeProvider>
+      </MuiThemeProvider>
+    </StylesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
