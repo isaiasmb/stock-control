@@ -5,11 +5,10 @@ import { ThemeProvider } from 'styled-components'
 import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
-import Base from 'templates/Base'
-
 import theme from './styles/theme'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
+import Dashboard from 'pages/Dashboard'
 
 const history = createBrowserHistory()
 
@@ -19,7 +18,7 @@ ReactDOM.render(
       <MuiThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>
           <Router history={history}>
-            <Base />
+            <Dashboard />
           </Router>
         </ThemeProvider>
       </MuiThemeProvider>
