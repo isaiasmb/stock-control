@@ -8,14 +8,20 @@ const MainMenu = () => (
     {mainMenu.map((menu) => {
       if (!menu.submenu) {
         return (
-          <S.MenuItem>
-            <MenuItemLink to={menu.to!}>{menu.label}</MenuItemLink>
-          </S.MenuItem>
+          <MenuItemLink key={menu.label} to={menu.to!}>
+            {menu.label}
+          </MenuItemLink>
         )
       }
 
       if (menu.submenu) {
-        return <MenuDropdown label={menu.label} menuItems={menu.submenu} />
+        return (
+          <MenuDropdown
+            key={menu.label}
+            label={menu.label}
+            menuItems={menu.submenu}
+          />
+        )
       }
     })}
   </S.MainMenu>

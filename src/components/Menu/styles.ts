@@ -24,6 +24,8 @@ export const MobileMenu = styled.div`
   `}
 `
 
+export const SubmenuMobileWrapper = styled.div``
+
 export const SubmenuMobile = styled.div`
   ${({ theme }) => css`
     padding-left: ${theme.spacing(3)}px;
@@ -39,10 +41,10 @@ export const MainMenu = styled.ul`
   `}
 `
 
-export const MenuItem = styled.li`
-  ${({ theme }) => css`
-    margin-right: ${theme.spacing(3)}px;
-  `}
+export const MenuItem = styled(MC.MenuItem)`
+  svg {
+    margin-right: -6px;
+  }
 `
 
 export const LeftMenu = styled.div`

@@ -38,6 +38,7 @@ const MobileMenu = () => {
             if (!menu.submenu) {
               return (
                 <ListItemLink
+                  key={menu.label}
                   onClick={toggleOpen}
                   to={menu.to ? menu.to : ''}
                   button
@@ -49,7 +50,7 @@ const MobileMenu = () => {
 
             if (menu.submenu) {
               return (
-                <>
+                <S.SubmenuMobileWrapper key={menu.label}>
                   <MC.ListItem>
                     <MC.ListItemText primary={menu.label} />
                   </MC.ListItem>
@@ -66,7 +67,7 @@ const MobileMenu = () => {
                       </ListItemLink>
                     ))}
                   </S.SubmenuMobile>
-                </>
+                </S.SubmenuMobileWrapper>
               )
             }
           })}

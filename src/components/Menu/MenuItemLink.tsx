@@ -10,9 +10,9 @@ const MenuItemLink = ({ to, children, ...props }: MenuItemLinkProps) => {
   const renderLink = React.useMemo(
     () =>
       // eslint-disable-next-line react/display-name
-      React.forwardRef<any, Omit<LinkProps, 'to'>>((itemProps, ref) => (
-        <Link to={to} ref={ref} {...itemProps} />
-      )),
+      React.forwardRef<HTMLAnchorElement, Omit<LinkProps, 'to'>>(
+        (itemProps, ref) => <Link to={to} ref={ref} {...itemProps} />
+      ),
     [to]
   )
 

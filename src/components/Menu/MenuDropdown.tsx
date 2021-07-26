@@ -18,15 +18,13 @@ const MenuDropdown = ({ label, menuItems }: MenuDropdownProps) => {
 
   return (
     <>
-      <S.MenuItem>
-        <MC.MenuItem
-          ref={ref}
-          color="inherit"
-          onClick={() => helpers.handleToggle(setOpen)}
-        >
-          {label}
-          <KeyboardArrowDownIcon />
-        </MC.MenuItem>
+      <S.MenuItem
+        ref={ref}
+        color="inherit"
+        onClick={() => helpers.handleToggle(setOpen)}
+      >
+        {label}
+        <KeyboardArrowDownIcon />
       </S.MenuItem>
       <MC.Popper open={open} anchorEl={ref.current} transition disablePortal>
         {({ TransitionProps, placement }) => (

@@ -14,7 +14,7 @@ import './index.css'
 const history = createBrowserHistory()
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>
@@ -24,7 +24,7 @@ ReactDOM.render(
         </ThemeProvider>
       </MuiThemeProvider>
     </StylesProvider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 )
 
